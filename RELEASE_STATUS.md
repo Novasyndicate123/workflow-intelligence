@@ -1,13 +1,14 @@
 # Workflow Intelligence Community Edition — Release Status
 
 Status: HARDENED / STAGED / NOT PUBLISHED
+Release: v0.1.1
 Candidate license: Apache-2.0
 Release form: source-first Community Edition + reproducible sdist/wheel
 
 ## Verification
 
 - Community tests: 76 passed
-- Test runtime: 1.01s
+- Test runtime: 0.49s
 - Python compile errors: 0
 - Secret-pattern hits: 0
 - Machine-specific/local-runtime references: 0
