@@ -1,14 +1,16 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "workflow-intelligence"
-version = "0.1.0"
-description = "Workflow Intelligence Community Edition"
+version = "0.1.1"
+description = "Evidence-backed economic proof for workflow automation decisions"
 readme = "README.md"
 license = "Apache-2.0"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
 requires-python = ">=3.10"
+keywords = ["workflow-intelligence", "automation", "ai-readiness", "economic-intelligence", "process-improvement"]
 dependencies = [
     "numpy>=1.26,<3",
     "pandas>=3,<4",
@@ -17,9 +19,9 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest",
+    "build",
 ]
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["core*"]
-
