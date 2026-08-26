@@ -53,6 +53,18 @@ The repository CI tests Python 3.12 and 3.13, runs dependency review and CodeQL,
 
 ## Release status
 
-`v0.1.0` is the verified Community Edition release candidate. Public publication is intentionally separated from the private laboratory repository.
+0.1.1 is the current verified Community Edition release and is publicly available on GitHub and PyPI.
 
-The current release gate requires final legal/dependency attribution review plus creation of the public repository and publication destination.
+Install the published package with:
+
+`powershell
+python -m pip install workflow-intelligence==0.1.1
+`
+
+## Start with one workflow
+
+Describe one repetitive workflow and use the Community Edition to move from **Observe → Evidence → Opportunity → Control → Proof → Outcome**. The goal is not to automate first; it is to establish whether the work is worth automating and what evidence supports that decision.
+
+For teams that need hosted operations, managed AI/model routing, organizational governance, private deployment, support, implementation, or commercial integrations, the open-source core provides the foundation for a managed offering.
+
+**Next step:** evaluate one real workflow, capture the evidence, and run a bounded experiment before committing to automation.
