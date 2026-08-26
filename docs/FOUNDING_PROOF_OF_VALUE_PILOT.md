@@ -36,7 +36,7 @@ This gives us a fast way to test three things with real buyers:
 - whether the evidence produced is useful for a real business decision;
 - which hosted capabilities customers actually want next.
 
-Australian automation providers currently publish fixed-scope workflow assessments and projects in the hundreds to thousands of Australian dollars, while larger consulting engagements can be materially higher. Our A$499 founding price is deliberately positioned as an entry-level proof step rather than a full automation implementation. citeturn828868search2turn828868search3turn828868search8
+The A founding price is deliberately an entry-level proof step, not a full automation implementation. It is a market-test price and can change as real customer evidence accumulates.
 
 ## Conversion path
 
