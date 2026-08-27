@@ -66,3 +66,7 @@ Describe one repetitive workflow and use the Community Edition to move from Obse
 For teams that need hosted operations, managed AI/model routing, organizational governance, private deployment, support, implementation, or commercial integrations, the open-source core provides the foundation for a managed offering.
 
 Next step: evaluate one real workflow, capture the evidence, and run a bounded experiment before committing to automation.
+
+## Contact
+
+For Workflow Intelligence project, pilot, partnership, and support enquiries: **workflowintell@gmail.com**.

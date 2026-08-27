@@ -29,3 +29,7 @@ A future integration ecosystem can support commercial connectors, templates, ext
 ## Revenue rule
 
 The business should measure actual cash collected, not projected customer value. A real payment is the threshold for claiming revenue validation.
+
+## Contact
+
+For pilot, commercial, partnership, or support enquiries: **workflowintell@gmail.com**.

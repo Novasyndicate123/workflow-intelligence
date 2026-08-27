@@ -29,3 +29,7 @@ Local operator controls, credentials, model caches, private datasets, hosted inf
 ## Evidence standard
 
 A test can prove software behavior. It cannot prove real customer demand or revenue. Keep those claims separate.
+
+## Maintainer contact
+
+Project and contribution enquiries can be directed to **workflowintell@gmail.com**.

@@ -27,3 +27,7 @@ A component must not silently gain external-send or external-execution authority
 ## Current release posture
 
 This Community Edition is a staged release candidate. It has not been publicly published or granted production security commitments.
+
+## Security contact
+
+For private security reports, contact **workflowintell@gmail.com** rather than publishing sensitive details publicly.

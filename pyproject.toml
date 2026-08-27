@@ -9,12 +9,17 @@ description = "Evidence-backed economic proof for workflow automation decisions"
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{ name = "Workflow Intelligence", email = "workflowintell@gmail.com" }]
 requires-python = ">=3.10"
 keywords = ["workflow-intelligence", "automation", "ai-readiness", "economic-intelligence", "process-improvement"]
 dependencies = [
     "numpy>=1.26,<3",
     "pandas>=3,<4",
 ]
+
+[project.urls]
+Homepage = "https://github.com/Novasyndicate123/workflow-intelligence"
+
 
 [project.optional-dependencies]
 dev = [

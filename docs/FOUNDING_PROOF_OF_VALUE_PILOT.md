@@ -47,3 +47,7 @@ The pilot is the bridge between free adoption and paid recurring value.
 ## Evidence rule
 
 A pilot counts as commercial validation only when there is an actual customer payment. Interest, a call, an email, a GitHub star, or a downloaded package is not revenue evidence.
+
+## Pilot contact
+
+To discuss or request a founding pilot, contact **workflowintell@gmail.com**.
