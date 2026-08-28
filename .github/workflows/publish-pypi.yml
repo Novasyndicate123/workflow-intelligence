@@ -4,33 +4,64 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing GitHub release tag to publish
+        required: true
+        type: string
 
 permissions:
   contents: read
 
 jobs:
   publish:
-    name: Build and publish package
+    name: Publish canonical release artifacts
     runs-on: ubuntu-latest
     environment: pypi
     permissions:
       contents: read
       id-token: write
+    env:
+      RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
     steps:
-      - name: Checkout source
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
-
-      - name: Set up Python
-        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
-        with:
-          python-version: '3.12'
-
-      - name: Build distributions
+      - name: Download GitHub release artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          python -m pip install --upgrade pip build
-          python -m build --outdir dist
+          mkdir -p dist
+          gh release download "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --dir dist \
+            --pattern 'workflow_intelligence-*.whl' \
+            --pattern 'workflow_intelligence-*.tar.gz'
+
+      - name: Validate release artifact identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid release tag: $RELEASE_TAG" >&2
+            exit 1
+          fi
+          VERSION="${RELEASE_TAG#v}"
+          wheel="dist/workflow_intelligence-${VERSION}-py3-none-any.whl"
+          sdist="dist/workflow_intelligence-${VERSION}.tar.gz"
+          shopt -s nullglob
+          artifacts=(dist/*)
+          if [[ ${#artifacts[@]} -ne 2 ]]; then
+            echo "Unexpected release artifact count for $RELEASE_TAG" >&2
+            printf ' - %s\n' "${artifacts[@]}" >&2
+            exit 1
+          fi
+          if [[ ! -f "$wheel" || ! -f "$sdist" ]]; then
+            echo "Unexpected release artifact names for $RELEASE_TAG" >&2
+            printf ' - %s\n' "${artifacts[@]}" >&2
+            exit 1
+          fi
+          sha256sum "$wheel" "$sdist"
 
       - name: Publish with Trusted Publishing
-        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2 # v1.14.2
+        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2
+        with:
+          packages-dir: dist/
+          print-hash: true
