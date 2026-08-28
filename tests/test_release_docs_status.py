@@ -21,3 +21,10 @@ def test_v011_release_docs_reflect_publication_truth() -> None:
     assert "Release: v0.1.1" in STATUS
     assert "PyPI" in combined
     assert "GitHub Release" in combined
+
+
+def test_current_release_status_does_not_hardcode_test_count() -> None:
+    import re
+
+    assert not re.search(r"Community test suite:\s*\d+", STATUS)
+    assert "CI" in STATUS

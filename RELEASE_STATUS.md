@@ -7,7 +7,7 @@ Release form: public Community Edition + sdist/wheel
 
 ## Current verification
 
-- Community test suite: 83 tests expected after this documentation guard is merged.
+- Community test suite: PASS; count is reported by CI and intentionally not hardcoded here.
 - Clean Python 3.12 verification environment: PASS.
 - Source distribution + wheel build: PASS.
 - GitHub Actions workflow syntax/static validation: PASS.
